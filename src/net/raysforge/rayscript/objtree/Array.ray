@@ -1,0 +1,22 @@
+
+
+class Array
+{
+  native add;
+  native get;
+  native size;
+  native length;
+  native clear;
+
+  native set;
+  native contains;
+  
+  native reverse;
+  native sort;
+  native splice;
+  
+  native push;
+  native pop;
+  native shift;
+  native unshift;
+}

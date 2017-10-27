@@ -1,0 +1,15 @@
+
+
+class StringArray
+{
+  native add;
+  native get;
+  native size;
+  native length;
+  native clear;
+
+  native join;
+  native map;
+  native grep;
+  native sort;
+}

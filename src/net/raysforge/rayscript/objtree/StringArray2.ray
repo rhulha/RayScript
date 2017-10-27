@@ -1,0 +1,9 @@
+
+
+class String[] extends Object[]
+class StringArray extends Array
+{
+  native join;
+  native map;
+  native grep;
+}

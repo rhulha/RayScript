@@ -1,0 +1,19 @@
+
+
+class File
+{
+  native open;
+  native length;
+  native getOutputStream;
+  native getInputStream;
+}
+
+class InputStream
+{
+  native read;
+}
+
+class OutputStream
+{
+  native write;
+}

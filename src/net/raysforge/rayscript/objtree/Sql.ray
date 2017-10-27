@@ -1,0 +1,14 @@
+
+class Sql extends Object
+{
+  native addDriver;
+  native getConn;
+  native getTables;
+  native getColumns;
+  native prepare;
+  native execute;
+  native fetchRow;
+  native rowCount;
+  native close;
+  native closeConn;
+}

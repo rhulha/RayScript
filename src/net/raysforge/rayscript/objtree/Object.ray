@@ -1,0 +1,10 @@
+
+class Object
+{
+  native compare; # für zB: .sort()
+  native equals;
+  native getClass;
+  native clone;
+  native dump;
+  native toString;
+}

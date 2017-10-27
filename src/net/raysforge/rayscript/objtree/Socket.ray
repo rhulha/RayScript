@@ -1,0 +1,9 @@
+
+class Socket
+{
+  native connect( ip, port);
+  native serve( ip, port);
+
+  native getOutputStream;
+  native getInputStream;
+}

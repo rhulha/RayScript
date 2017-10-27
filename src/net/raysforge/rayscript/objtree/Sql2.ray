@@ -1,0 +1,35 @@
+
+
+class DBI
+{
+  native connect;
+}
+
+class DBHandle
+{
+  native do;
+  native prepare;
+  native commit;
+  native disconnect;
+}
+
+class Statement
+{
+  native execute;
+  native fetch;
+  native finish;
+}
+
+
+code
+{
+  var dbh = DBI.connect("mysql");
+  var sth = dbh.prepare("select * from tab where a = ?");
+
+  sth.execute("somevalue");
+  while( var array = sth.fetch())
+  {
+     array.join(",").print();
+  }
+  dbh.disconnect();
+}

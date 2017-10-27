@@ -1,0 +1,46 @@
+
+class String
+{
+  native toString;
+
+  native set;
+  native eq;
+  native equals;
+  native ne;
+  native not;
+  native or;
+  native and;
+  native lt;
+  native le;
+  native gt;
+  native ge;
+
+  native charAt;
+  native setCharAt;
+  native split;
+  native length;
+  native size;
+
+  native copy;
+  native clone;
+
+  native inc;
+  native dec;
+  native append;
+  native append!;
+  native plus;
+  native plus!;
+  native minus;
+  native minus!;
+  native times;
+  native times!;
+  native devideby;
+  native devideby!;
+  native sqrt;
+  native sqrt!;
+
+  native readFile;
+  native check;
+  native print;
+  native alert;
+}

@@ -1,0 +1,208 @@
+
+class HtmlPage
+{
+  var title = "Herzlich Willkommen";
+  var body = "";
+
+  function setBody(b)
+  {
+    body = b;
+  }
+
+  function render
+  {
+     "<HTML><HEAD><TITLE>".print();
+     title.print();
+     "</TITLE></HEAD>".print();
+     body.render();
+     "</HTML>".print();
+  }
+}
+
+class NestedTag
+{
+  var tag;
+  var content;
+  var attr;
+  
+  function init
+  {
+    content = new Array();
+    attr = new Array();
+  }
+
+  function addAttr(c)
+  {
+    attr.add(c);
+  }
+
+  function setTag(t)
+  {
+    tag = t;
+  }
+
+  function setContent(c)
+  {
+    content = c;
+  }
+
+  function addContent(c)
+  {
+    content.add(c);
+  }
+
+  function render
+  {
+     "<".append(tag).print();
+
+     var i=0;
+     var s=attr.size();
+     while( i.lt(s) )
+     {
+       " ".append( attr.get(i) ).print();
+       i.inc();
+     }
+     ">".print();
+
+     i=0;
+     s=content.size();
+     while( i.lt(s) )
+     {
+       content.get(i).render();
+       i.inc();
+     }
+
+     "</".append(tag).append(">").print();
+  }
+}
+
+class Body extends NestedTag
+{
+  var tag = "BODY";
+  function init
+  {
+    content = new Array();
+    attr = new Array();
+  }
+}
+
+class Form extends NestedTag
+{
+  var tag = "FORM";
+  function init
+  {
+    content = new Array();
+    attr = new Array();
+  }
+}
+
+class Table extends NestedTag
+{
+  var tag = "TABLE";
+  function init
+  {
+    content = new Array();
+    attr = new Array();
+  }
+}
+
+class Text
+{
+  var text;
+  function setText(t)
+  {
+    text = t;
+  }
+  function render
+  {
+     text.print();
+  }
+}
+
+class Tag
+{
+  var tag;
+  var attr;
+
+  function init
+  {
+    attr = new Array();
+  }
+
+  function setTag(t)
+  {
+    tag = t;
+  }
+
+  function addAttr(c)
+  {
+    attr.add(c);
+  }
+
+  function render
+  {
+     "<".append(tag).print();
+
+     var i=0;
+     var s=attr.size();
+     while( i.lt(s) )
+     {
+       " ".append( attr.get(i) ).print();
+       i.inc();
+     }
+     ">".print();
+   }
+}
+
+function service(jcgi)
+{
+  var hp = new HtmlPage();
+  var b = new Body();
+  var form = new Form();
+  form.addAttr("action=/ray/hash.ray");
+
+  var br = new Text();
+  br.setText("<BR>");
+
+  var text;
+  var input;
+
+  text = new Text();
+  text.setText("Name");
+  form.addContent(text);
+
+  input = new Tag();
+  input.setTag("INPUT");
+  input.addAttr("type=text");
+  input.addAttr("name=name");
+  form.addContent(input);
+
+  form.addContent(br);
+  
+  text = new Text();
+  text.setText("Alter");
+  form.addContent(text);
+
+  input = new Tag();
+  input.setTag("INPUT");
+  input.addAttr("type=text");
+  input.addAttr("name=alter");
+  form.addContent(input);
+
+  form.addContent(br);
+
+  input = new Tag();
+  input.setTag("INPUT");
+  input.addAttr("type=submit");
+  form.addContent(input);
+
+  b.addContent(form);
+  hp.setBody( b);
+  
+  hp.render();
+}
+
+code
+{
+  this.service();
+}

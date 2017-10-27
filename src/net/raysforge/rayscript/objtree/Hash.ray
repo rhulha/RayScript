@@ -1,0 +1,16 @@
+
+class Hash
+{
+  native put;
+  native get;
+  native exists;
+  native delete;
+  native keys;
+  native values;
+  native strValues;
+  native isEmpty;
+  
+  native remove;
+  native size;
+  native contains;
+}
